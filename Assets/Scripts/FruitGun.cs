@@ -27,13 +27,14 @@ public class FruitGun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Fruit should have a method which it goes towards bottom.
-            // It seems physics is not applied until it makes a contact with another fruit.
+            fruit.transform.SetParent(null);
+            fruit.GetComponent<Fruit>().Shoot();
         }
     }
-    
-    void Update()
+
+    private void Update()
     {
         Movement();
+        ShootFruit();
     }
 }
