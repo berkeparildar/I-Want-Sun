@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class Fruit : MonoBehaviour
+public class Planet : MonoBehaviour
 {
     [SerializeField] private float fallSpeed;
     [SerializeField] private bool shot;
