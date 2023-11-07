@@ -5,10 +5,10 @@ public class PlanetGun : MonoBehaviour
     [SerializeField] private GameObject planet;
     [SerializeField] private float speed;
     [SerializeField] private GameObject[] planetPrefabs;
+    [SerializeField] private bool reload;
     
     private void Start()
     {
-        ReloadGun();
     }
 
     private void Movement()
@@ -31,14 +31,19 @@ public class PlanetGun : MonoBehaviour
 
     public void ReloadGun()
     {
-        var randomInt = Random.Range(0, planetPrefabs.Length - 1);
-        var initialPlanet = Instantiate(planetPrefabs[randomInt], transform.position, Quaternion.identity);
-        initialPlanet.transform.SetParent(transform);
-        planet = initialPlanet;
+        if (!reload)
+        {
+            reload = true;
+            var randomInt = Random.Range(0, planetPrefabs.Length - 1);
+            var initialPlanet = Instantiate(planetPrefabs[randomInt], transform.position, Quaternion.identity);
+            initialPlanet.transform.SetParent(transform);
+            planet = initialPlanet;
+        }
     }
 
     private void Update()
     {
+        ReloadGun();
         Movement();
         ShootPlanet();
     }

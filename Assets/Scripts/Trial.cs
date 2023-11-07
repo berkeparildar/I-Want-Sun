@@ -12,11 +12,13 @@ public class Trial : MonoBehaviour
     [SerializeField] private PlanetGun planetGun;
     [SerializeField] private bool initialContact;
     [SerializeField] private float planetScale;
+    [SerializeField] private int conversionNumber;
 
     private void Awake()
     {
         planetGun = GameObject.Find("PlanetGun").GetComponent<PlanetGun>();
         transform.DOScale(planetScale, 0.3f);
+        conversionNumber = Random.Range(0, 101);
     }
 
     private void Update()
@@ -32,14 +34,9 @@ public class Trial : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!initialContact)
-        {
-            initialContact = true;
-            planetGun.ReloadGun();
-        }
-        if (other.CompareTag("Ground"))
+        if (other.gameObject.CompareTag("Ground"))
         {
             Debug.Log("Hit Ground ! !");
             // Since we hit the ground, we want to apply physics.
@@ -47,30 +44,41 @@ public class Trial : MonoBehaviour
             shot = false;
             rb.gravityScale = 1;
         }
-        else if (other.CompareTag(gameObject.tag))
+        else if (other.gameObject.CompareTag(gameObject.tag))
         {
-            Debug.Log("Hit the same type of object ! !");
             // The merge operation should be done here, which I still have not decided how to implement.
+            Debug.Log("Hit the same type of object ! !");
+            var otherConversion = other.transform.GetComponent<Trial>().GetConversionNumber();
             shot = false;
-            var contactPoint = other.ClosestPoint(transform.position);
-            other.GetComponent<Rigidbody2D>().gravityScale = 0;
-            other.GetComponent<CircleCollider2D>().enabled = false;
-            other.transform.DOMove(contactPoint, 1);
-            transform.DOMove(contactPoint, 1).OnComplete(() =>
+            var contactPoint = other.GetContact(0);
+            if (conversionNumber >= otherConversion)
             {
-                Destroy(gameObject);
-                Destroy(other.gameObject);
-                // Both of them are initializing which is causing errors...
-                Instantiate(planetPrefabs[planetIndex + 1], contactPoint, Quaternion.identity);
-            });
-            // At this point some sort of particle must spawn.
+                other.transform.GetComponent<CircleCollider2D>().enabled = false;
+                circleCollider.enabled = false;
+                rb.gravityScale = 0;
+                other.transform.GetComponent<Rigidbody2D>().gravityScale = 0;
+                transform.DOMove(contactPoint.point, 1);
+                other.transform.DOMove(contactPoint.point, 1).OnComplete(() =>
+                {
+                    // Both of them are initializing which is causing errors...
+                    Debug.Log("creating");
+                    Destroy(other.gameObject);
+                    Destroy(gameObject);
+                    // At this point some sort of particle must spawn.
+                    Instantiate(planetPrefabs[planetIndex + 1], contactPoint.point, Quaternion.identity);
+                });
+            }
         }
-        
     }
 
     public float GetScale()
     {
         return planetScale;
+    }
+
+    public int GetConversionNumber()
+    {
+        return conversionNumber;
     }
 
     public void Shoot()
