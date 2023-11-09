@@ -9,6 +9,7 @@ public class PlanetGun : MonoBehaviour
     
     private void Start()
     {
+        ReloadGun();
     }
 
     private void Movement()
@@ -25,25 +26,20 @@ public class PlanetGun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             planet.transform.SetParent(null);
-            planet.GetComponent<Trial>().Shoot();
+            planet.GetComponent<Planet>().Shoot();
         }
     }
 
     public void ReloadGun()
     {
-        if (!reload)
-        {
-            reload = true;
-            var randomInt = Random.Range(0, planetPrefabs.Length - 1);
-            var initialPlanet = Instantiate(planetPrefabs[randomInt], transform.position, Quaternion.identity);
-            initialPlanet.transform.SetParent(transform);
-            planet = initialPlanet;
-        }
+        var randomInt = Random.Range(0, planetPrefabs.Length - 1);
+        var initialPlanet = Instantiate(planetPrefabs[randomInt], transform.position, Quaternion.identity);
+        initialPlanet.transform.SetParent(transform);
+        planet = initialPlanet;
     }
 
     private void Update()
     {
-        ReloadGun();
         Movement();
         ShootPlanet();
     }

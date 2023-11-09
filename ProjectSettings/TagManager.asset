@@ -5,7 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Trial
+  - Moon
+  - Mercury
+  - Mars
+  - Earth
+  - Uranus
+  - Neptune
+  - Venus
+  - Jupiter
+  - ExoOne
+  - ExoTwo
+  - Sun
   layers:
   - Default
   - TransparentFX

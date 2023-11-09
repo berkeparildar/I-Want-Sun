@@ -15,4 +15,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public GameObject GetPlanetAtIndex(int index)
+    {
+        return planetPrefabs[index];
+    }
 }
