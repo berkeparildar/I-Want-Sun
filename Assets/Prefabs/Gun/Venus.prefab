@@ -83,7 +83,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 4
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -128,9 +128,11 @@ MonoBehaviour:
   shot: 0
   rb: {fileID: 3133417423120677791}
   circleCollider: {fileID: 6596663607876645957}
-  planetScale: 0.6
+  planetScale: 0.8
   conversionNumber: 0
   gameManager: {fileID: 0}
+  popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
+  particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
 --- !u!1 &3470304846515069108
 GameObject:
   m_ObjectHideFlags: 0

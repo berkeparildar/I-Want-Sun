@@ -7,8 +7,8 @@ public class InitialContact : MonoBehaviour
 {
     [SerializeField] private bool initialContact;
     [SerializeField] private PlanetGun planetGun;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
         planetGun = GameObject.Find("PlanetGun").GetComponent<PlanetGun>();
     }
@@ -21,10 +21,8 @@ public class InitialContact : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (!initialContact)
-        {
-            initialContact = true;
-            planetGun.ReloadGun();
-        }
+        if (initialContact) return;
+        initialContact = true;
+        planetGun.ReloadGun();
     }
 }

@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 13
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 0.9013662, b: 0, a: 1}
   m_FlipX: 0
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 13cd908e395c38548bb4d7aac2e74e35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -284,7 +284,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -315,9 +315,11 @@ MonoBehaviour:
   shot: 0
   rb: {fileID: 8086446682884702089}
   circleCollider: {fileID: 574499367387883210}
-  planetScale: 0.7
+  planetScale: 0.9
   conversionNumber: 0
   gameManager: {fileID: 0}
+  popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
+  particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
 --- !u!1 &8904962474886538511
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +392,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 14
   m_Sprite: {fileID: 0}
   m_Color: {r: 0.7264151, g: 0.20183612, b: 0, a: 0.31764707}
   m_FlipX: 0

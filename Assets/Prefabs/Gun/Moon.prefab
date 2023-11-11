@@ -296,9 +296,11 @@ MonoBehaviour:
   shot: 0
   rb: {fileID: 2060421061909504780}
   circleCollider: {fileID: 5485986247934551533}
-  planetScale: 0.3
+  planetScale: 0.5
   conversionNumber: 0
   gameManager: {fileID: 0}
+  popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
+  particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
 --- !u!1 &5949578022849453021
 GameObject:
   m_ObjectHideFlags: 0

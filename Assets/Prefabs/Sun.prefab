@@ -827,7 +827,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.17526768, y: -0.8583969, z: -0.07750085}
-  m_LocalScale: {x: 0.0001, y: 0.0001, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1337243122214450647}
@@ -914,6 +914,8 @@ MonoBehaviour:
   planetScale: 2
   conversionNumber: 0
   gameManager: {fileID: 0}
+  popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
+  particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
 --- !u!1 &7223308893186983518
 GameObject:
   m_ObjectHideFlags: 0

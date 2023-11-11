@@ -1,5 +1,7 @@
 using System.Collections;
 using DG.Tweening;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Planet : MonoBehaviour
@@ -11,6 +13,8 @@ public class Planet : MonoBehaviour
     [SerializeField] private float planetScale;
     [SerializeField] private int conversionNumber;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameObject popUpText;
+    [SerializeField] private GameObject particle;
 
     private void Awake()
     {
@@ -49,6 +53,10 @@ public class Planet : MonoBehaviour
             shot = false;
             transform.DOPunchScale(new Vector3(0.2f, 0, 0), 0.2f, 5, 0.1f);
             // This equal is problematic, need to change for equal case
+            while (other.transform.GetComponent<Planet>().GetConversionNumber() == conversionNumber)
+            {
+                conversionNumber = Random.Range(0, 100);
+            }
             if (conversionNumber > otherConversion)
             {
                 transform.DOMove(contactPoint.point, 0.3f);
@@ -56,6 +64,8 @@ public class Planet : MonoBehaviour
                 StartCoroutine(Die());
                 // At this point some sort of particle must spawn.
                 var nextPlanet = gameManager.GetPlanetAtIndex(planetIndex + 1);
+                ShowScorePopUp(contactPoint.point, planetIndex + 1);
+                Instantiate(particle, contactPoint.point, Quaternion.identity);
                 Instantiate(nextPlanet, contactPoint.point, Quaternion.identity);
             }
             else if (conversionNumber < otherConversion)
@@ -85,5 +95,18 @@ public class Planet : MonoBehaviour
     public void Shoot()
     {
         shot = true;
+    }
+    
+    private void ShowScorePopUp(Vector3 pos, int score)
+    {
+        var textGameObject = Instantiate(popUpText, pos, Quaternion.identity);
+        var text = textGameObject.GetComponent<TextMeshPro>();
+        text.text = "+" + score;
+        gameManager.IncreaseScore(score);
+        text.transform.DOMoveY(1, 1).SetRelative();
+        text.DOFade(0, 1).OnComplete(() =>
+        {
+            Destroy(text.gameObject, 2);
+        });
     }
 }
