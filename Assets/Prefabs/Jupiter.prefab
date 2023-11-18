@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2362122071190895529}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7148179568705780695}
   - component: {fileID: 3100390917369062289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6645772994227097496}
   - component: {fileID: 8210826803370032846}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 7573025973079872854}
   - component: {fileID: 9180369854237321848}
   - component: {fileID: 3025443404212842770}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Jupiter
   m_TagString: Jupiter
   m_Icon: {fileID: 0}
@@ -320,6 +320,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &7587829513722338962
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 212134573078685825}
   - component: {fileID: 3618075687162820081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

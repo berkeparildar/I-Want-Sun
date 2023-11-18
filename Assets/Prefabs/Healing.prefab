@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8831014022843346324}
   - component: {fileID: 3436958874569091239}
   - component: {fileID: 8130846924723416881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Healing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4907,7 +4907,7 @@ GameObject:
   - component: {fileID: 7162173977819841267}
   - component: {fileID: 7522199702761253137}
   - component: {fileID: 3942644892367610524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

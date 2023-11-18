@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 779396626386682012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6668349525914969786}
   - component: {fileID: 5997828021514130329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 7948333106384069806}
   - component: {fileID: 8179360663794071324}
   - component: {fileID: 2581251000378566186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Uranus
   m_TagString: Uranus
   m_Icon: {fileID: 0}
@@ -236,6 +236,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &3395515560646190347
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 627553463980596070}
   - component: {fileID: 2823829844024370008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3594725683556560200}
   - component: {fileID: 208470258474209716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

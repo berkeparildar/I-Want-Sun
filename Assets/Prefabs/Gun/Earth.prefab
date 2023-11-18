@@ -314,6 +314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialContact: 0
   planetGun: {fileID: 0}
+  offLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &3604593640495624495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +338,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &8904962474886538511
 GameObject:
   m_ObjectHideFlags: 0

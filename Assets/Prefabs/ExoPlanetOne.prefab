@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 380224317545254221}
   - component: {fileID: 7375329802097714972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4241789243043877945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7719127243412834604}
   - component: {fileID: 8159697444185058534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 8406375369577968318}
   - component: {fileID: 8259465480839483464}
   - component: {fileID: 1986477233180045066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExoPlanetOne
   m_TagString: ExoOne
   m_Icon: {fileID: 0}
@@ -320,6 +320,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &7354552608729308070
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3752508113036950343}
   - component: {fileID: 2617084767161981245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

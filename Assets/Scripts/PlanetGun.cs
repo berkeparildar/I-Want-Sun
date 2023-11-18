@@ -3,8 +3,10 @@ using UnityEngine;
 public class PlanetGun : MonoBehaviour
 {
     [SerializeField] private GameObject planet;
-    [SerializeField] private float speed;
     [SerializeField] private GameObject[] planetPrefabs;
+    [SerializeField] private bool inPause;
+    [SerializeField] private GameObject planetBasket;
+    [SerializeField] private GameManager gameManager;
     private Camera mainCamera;
 
     private void Start()
@@ -15,7 +17,7 @@ public class PlanetGun : MonoBehaviour
 
     private void ShootPlanet()
     {
-        if (Input.GetMouseButton(0) && transform.childCount != 0)
+        if (Input.GetMouseButton(0) && transform.childCount != 0 && !inPause && !gameManager.GetGameState())
         {
             var currentPos = transform.position;
             var touchPosition = Input.mousePosition;
@@ -33,7 +35,7 @@ public class PlanetGun : MonoBehaviour
                 touchOnWorld.x = -2.75f + (planet.GetComponent<Planet>().GetScale() / 2);
             }
             transform.position = new Vector3(touchOnWorld.x, currentPos.y, 0);
-            planet.transform.SetParent(null);
+            planet.transform.SetParent(planetBasket.transform);
             planet.GetComponent<Planet>().Shoot();
         }
     }
@@ -72,6 +74,10 @@ public class PlanetGun : MonoBehaviour
     {
         ShootPlanet();
     }
-    
+
+    public void GamePaused()
+    {
+        inPause = !inPause;
+    }
     
 }

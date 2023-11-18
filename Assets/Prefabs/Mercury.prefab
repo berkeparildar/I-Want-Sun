@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7022519469362241526}
   - component: {fileID: 1902155974970156950}
   - component: {fileID: 6279661897151450460}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mercury
   m_TagString: Mercury
   m_Icon: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &2778274855535913269
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5011307407225900460}
   - component: {fileID: 9111466953121740689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6015887626619992237}
   - component: {fileID: 3974413844994202839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 982154420647294219}
   - component: {fileID: 3644928514620782322}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6990079427107000101}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}

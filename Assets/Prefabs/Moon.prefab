@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 838332911494148603}
   - component: {fileID: 3105013137496732926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: light3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4338163920664243387}
   - component: {fileID: 6861266067419054024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 5485986247934551533}
   - component: {fileID: 2060421061909504780}
   - component: {fileID: 3175276842102824699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Moon
   m_TagString: Moon
   m_Icon: {fileID: 0}
@@ -286,6 +286,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &5949578022849453021
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3249410006257376689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8203239374318315826}
   - component: {fileID: 8832646019385056219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5839293390177993182}
   - component: {fileID: 8366252678396780385}
   - component: {fileID: 1054336823766509498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ScorePopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

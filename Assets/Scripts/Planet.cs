@@ -1,7 +1,6 @@
 using System.Collections;
 using DG.Tweening;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Planet : MonoBehaviour
@@ -15,12 +14,22 @@ public class Planet : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject popUpText;
     [SerializeField] private GameObject particle;
+    [SerializeField] private GameObject planetContainer;
+    [SerializeField] private GameObject popUpContainer;
 
     private void Awake()
     {
         transform.DOScale(planetScale, 0.3f);
         conversionNumber = Random.Range(0, 101);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        planetContainer = GameObject.Find("PlanetContainer");
+        popUpContainer = GameObject.Find("PopUpContainer");
+    }
+
+    private void SunInit()
+    {
+        circleCollider.enabled = false;
+        transform.DOScale(planetScale, 0.3f);
     }
 
     private void Update()
@@ -66,7 +75,8 @@ public class Planet : MonoBehaviour
                 var nextPlanet = gameManager.GetPlanetAtIndex(planetIndex + 1);
                 ShowScorePopUp(contactPoint.point, planetIndex + 1);
                 Instantiate(particle, contactPoint.point, Quaternion.identity);
-                Instantiate(nextPlanet, contactPoint.point, Quaternion.identity);
+                var newPlanet = Instantiate(nextPlanet, contactPoint.point, Quaternion.identity);
+                newPlanet.transform.SetParent(planetContainer.transform);
             }
             else if (conversionNumber < otherConversion)
             {
@@ -100,6 +110,7 @@ public class Planet : MonoBehaviour
     private void ShowScorePopUp(Vector3 pos, int score)
     {
         var textGameObject = Instantiate(popUpText, pos, Quaternion.identity);
+        textGameObject.transform.SetParent(popUpContainer.transform);
         var text = textGameObject.GetComponent<TextMeshPro>();
         text.text = "+" + score;
         gameManager.IncreaseScore(score);
@@ -108,5 +119,11 @@ public class Planet : MonoBehaviour
         {
             Destroy(text.gameObject, 2);
         });
+    }
+
+    public void DestroyAfterGame()
+    {
+        ShowScorePopUp(transform.position, planetIndex + 1);
+        Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 137105644226470891}
   - component: {fileID: 7520430274770287248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Noise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2504436613391442460}
   - component: {fileID: 2831521014804418505}
   - component: {fileID: 8083403472080853930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Neptune
   m_TagString: Neptune
   m_Icon: {fileID: 0}
@@ -202,6 +202,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   popUpText: {fileID: 4402732065839848466, guid: 0bd330753df236547bf9515f94e1e061, type: 3}
   particle: {fileID: 3157403902049252543, guid: 6b943aa9d72da7049880b4aa238282bd, type: 3}
+  planetBasket: {fileID: 0}
 --- !u!1 &5057082493320069120
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2178644909982971908}
   - component: {fileID: 1965869467432032308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8962607177213301520}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4060592637370970332}
   - component: {fileID: 5105143691455748201}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
