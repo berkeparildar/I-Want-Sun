@@ -4,7 +4,7 @@ public class InitialContact : MonoBehaviour
 {
     [SerializeField] private bool initialContact;
     [SerializeField] private PlanetGun planetGun;
-
+    [SerializeField] private AudioSource audioSource;
     private void Start()
     {
         planetGun = GameObject.Find("PlanetGun").GetComponent<PlanetGun>();

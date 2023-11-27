@@ -16,6 +16,10 @@ public class Planet : MonoBehaviour
     [SerializeField] private GameObject particle;
     [SerializeField] private GameObject planetContainer;
     [SerializeField] private GameObject popUpContainer;
+    [SerializeField] private AudioSource soundEffect;
+    [SerializeField] private AudioClip mergeSound;
+    [SerializeField] private AudioClip groundSound;
+    [SerializeField] private float numberOfPlays;
 
     private void Awake()
     {
@@ -24,12 +28,6 @@ public class Planet : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         planetContainer = GameObject.Find("PlanetContainer");
         popUpContainer = GameObject.Find("PopUpContainer");
-    }
-
-    private void SunInit()
-    {
-        circleCollider.enabled = false;
-        transform.DOScale(planetScale, 0.3f);
     }
 
     private void Update()
@@ -49,6 +47,9 @@ public class Planet : MonoBehaviour
     {
         if (other.gameObject.CompareTag(gameObject.tag))
         {
+            soundEffect.volume = 1;
+            soundEffect.clip = mergeSound;
+            soundEffect.Play();
             var contactPoint = other.GetContact(0);
             float angle = Mathf.Atan2(contactPoint.point.y - transform.position.y, contactPoint.point.x - transform.position.x) * Mathf.Rad2Deg;
             // Set the rotation based on the calculated angle
@@ -82,6 +83,15 @@ public class Planet : MonoBehaviour
             {
                 transform.DOMove(contactPoint.point, 0.3f);
                 StartCoroutine(Die());
+            }
+        }
+        else
+        {
+            if (other.relativeVelocity.magnitude > 2)
+            {
+                soundEffect.clip = groundSound;
+                soundEffect.volume -= 0.2f;
+                soundEffect.Play();
             }
         }
     }
