@@ -32,7 +32,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -102,6 +102,7 @@
       <workItem from="1700303801817" duration="5977000" />
       <workItem from="1701136902287" duration="1702000" />
       <workItem from="1701148600287" duration="1412000" />
+      <workItem from="1701211688290" duration="329000" />
     </task>
     <servers />
   </component>
@@ -112,5 +113,9 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
