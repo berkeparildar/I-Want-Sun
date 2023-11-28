@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -27,11 +28,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite audioOffIcon;
     [SerializeField] private Sprite musicOnIcon;
     [SerializeField] private Sprite musicOffIcon;
+    [SerializeField] private BoxCollider2D leftBounds;
+    [SerializeField] private BoxCollider2D rightBounds;
     [SerializeField] private TextMeshProUGUI highScoreTextPause;
     [SerializeField] private TextMeshProUGUI sunCountTextPause;
     [SerializeField] private TextMeshProUGUI highScoreTextEnd;
     [SerializeField] private TextMeshProUGUI sunCountTextEnd;
     [SerializeField] private TextMeshProUGUI scoreTextEnd;
+
+    private void Start()
+    {
+        UpdateBounds();
+    }
 
     private void Update()
     {
@@ -83,6 +91,20 @@ public class GameManager : MonoBehaviour
     public bool GetGameState()
     {
         return gameOver;
+    }
+    
+    void UpdateBounds()
+    {
+        var lowerLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, Camera.main.transform.position.z));
+        var upperRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+
+        // Update left bounds
+        leftBounds.transform.position = new Vector3(lowerLeft.x - leftBounds.size.x / 2f, 0f, 0f);
+        leftBounds.size = new Vector2(leftBounds.size.x, leftBounds.size.y);
+
+        // Update right bounds
+        rightBounds.transform.position = new Vector3(upperRight.x + rightBounds.size.x / 2f, 0f, 0f);
+        rightBounds.size = new Vector2(rightBounds.size.x, rightBounds.size.y);
     }
 
     public void IncreaseScore(int s)

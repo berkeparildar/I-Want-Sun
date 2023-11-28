@@ -26,14 +26,27 @@ public class PlanetGun : MonoBehaviour
             {
                 return;
             }
-            if (touchOnWorld.x > 2.75f - (planet.GetComponent<Planet>().GetScale() / 2))
+            
+            float screenBoundsX = Camera.main.aspect * Camera.main.orthographicSize;
+
+            if (touchOnWorld.y >= 4)
             {
-                touchOnWorld.x = 2.75f - (planet.GetComponent<Planet>().GetScale() / 2);
+                return;
             }
-            else if (touchOnWorld.x < -2.75f + (planet.GetComponent<Planet>().GetScale() / 2))
+
+            float leftBound = -screenBoundsX + (planet.GetComponent<Planet>().GetScale() / 2) + 0.1f;
+            float rightBound = screenBoundsX - (planet.GetComponent<Planet>().GetScale() / 2) - 0.1f;
+            
+            if (touchOnWorld.x > rightBound)
             {
-                touchOnWorld.x = -2.75f + (planet.GetComponent<Planet>().GetScale() / 2);
+                touchOnWorld.x = rightBound;
             }
+            else if (touchOnWorld.x < leftBound)
+            {
+                touchOnWorld.x = leftBound;
+            }
+
+            
             transform.position = new Vector3(touchOnWorld.x, currentPos.y, 0);
             planet.transform.SetParent(planetBasket.transform);
             planet.GetComponent<Planet>().Shoot();

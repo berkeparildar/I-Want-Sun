@@ -697,6 +697,8 @@ MonoBehaviour:
   audioOffIcon: {fileID: 21300000, guid: 03ec2c850f7fff44386cfc3875564e55, type: 3}
   musicOnIcon: {fileID: 21300000, guid: da52ba5aec6486549b10db14a3ae9ff1, type: 3}
   musicOffIcon: {fileID: 21300000, guid: 3e76005b071151847a8f522ca1946a96, type: 3}
+  leftBounds: {fileID: 1030720943}
+  rightBounds: {fileID: 492032187}
   highScoreTextPause: {fileID: 307977501}
   sunCountTextPause: {fileID: 2104469547}
   highScoreTextEnd: {fileID: 1977046497}
