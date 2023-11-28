@@ -20,6 +20,7 @@ public class Planet : MonoBehaviour
     [SerializeField] private AudioClip mergeSound;
     [SerializeField] private AudioClip groundSound;
     [SerializeField] private float numberOfPlays;
+    [SerializeField] private bool hasMatched;
 
     private void Awake()
     {
@@ -51,7 +52,8 @@ public class Planet : MonoBehaviour
             soundEffect.clip = mergeSound;
             soundEffect.Play();
             var contactPoint = other.GetContact(0);
-            float angle = Mathf.Atan2(contactPoint.point.y - transform.position.y, contactPoint.point.x - transform.position.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(contactPoint.point.y - transform.position.y,
+                contactPoint.point.x - transform.position.x) * Mathf.Rad2Deg;
             // Set the rotation based on the calculated angle
             transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
             rb.freezeRotation = true;
@@ -67,6 +69,7 @@ public class Planet : MonoBehaviour
             {
                 conversionNumber = Random.Range(0, 100);
             }
+
             if (conversionNumber > otherConversion)
             {
                 transform.DOMove(contactPoint.point, 0.3f);
@@ -116,7 +119,7 @@ public class Planet : MonoBehaviour
     {
         shot = true;
     }
-    
+
     private void ShowScorePopUp(Vector3 pos, int score)
     {
         var textGameObject = Instantiate(popUpText, pos, Quaternion.identity);
@@ -125,15 +128,17 @@ public class Planet : MonoBehaviour
         text.text = "+" + score;
         gameManager.IncreaseScore(score);
         text.transform.DOMoveY(1, 1).SetRelative();
-        text.DOFade(0, 1).OnComplete(() =>
-        {
-            Destroy(text.gameObject, 2);
-        });
+        text.DOFade(0, 1).OnComplete(() => { Destroy(text.gameObject, 2); });
     }
 
     public void DestroyAfterGame()
     {
         ShowScorePopUp(transform.position, planetIndex + 1);
         Destroy(gameObject);
+    }
+
+    public bool IsMatched()
+    {
+        return hasMatched;
     }
 }

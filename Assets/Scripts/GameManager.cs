@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject endScreen;
     [SerializeField] private GameObject pauseScreen;
     [SerializeField] private PlanetGun planetGun;
-    [SerializeField] private AudioSource fxAudio;
     [SerializeField] private AudioSource musicAudio;
     [SerializeField] private Image musicIconRenderer;
     [SerializeField] private Image audioIconRenderer;
@@ -107,8 +106,10 @@ public class GameManager : MonoBehaviour
 
     public void MuteAudio()
     {
-        fxAudio.mute = !fxAudio.mute;
-        audioIconRenderer.sprite = fxAudio.mute ? audioOffIcon : audioOnIcon;
+        var pause = AudioListener.pause;
+        pause = !pause;
+        AudioListener.pause = pause;
+        audioIconRenderer.sprite = pause ? audioOffIcon : audioOnIcon;
     }
 
     public void MuteMusic()
